@@ -21,12 +21,8 @@ app.get('/api/workers', async (req, res) => {
     res.json(workers);
 });
 
-app.get('/api/pot', async (req, res) => {
-    const pot = await walletModel.find();
-    
-    console.log(pot);
-
-    console.log(pot[0].quantity)
+app.get('/api/pot/:id', async (req, res) => {
+    const pot = await walletModel.findOne({ _id: req.params.id });
 
 	res.json(pot[0].quantity);
 });
