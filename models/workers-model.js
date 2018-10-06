@@ -7,6 +7,4 @@ const workersSchema = mongoose.Schema({
     quantity: Number
 });
 
-workersSchema.plugin(AutoIncrement, { inc_field: 'workerId' });
-
 module.exports = mongoose.model('Workers', workersSchema);
