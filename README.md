@@ -84,7 +84,7 @@ PUT /api/pot/:wallet/distribute
 Example:
 
 ``` http
-PUT api/pot/5bb8ab88af4ba8e6dd6e2a14
+PUT api/pot/5bb8ab88af4ba8e6dd6e2a14/distribute
 
 Will distribute the quantity of the pot between the workers.
 
