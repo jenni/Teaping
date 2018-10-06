@@ -5,6 +5,7 @@
 * [Get all workers](#get-all-stops)
 * [Give tip](#give-tip)
 * [Get pot](#get-pot)
+* [Distribute payment](#get-pot)
 
 ### Get all workers
 
