@@ -1,4 +1,7 @@
-# Teaping API. :construction:
+# Teaping API. 
+:construction:
+
+Available under -> http://teaping.herokuapp.com
 
 ## Endpoints
 
