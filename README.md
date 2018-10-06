@@ -47,8 +47,8 @@ Example:
 POST api/pot/5bb8ab88af4ba8e6dd6e2a14
 
 {
-    hash: '324235235345',
-    quantity: 0.5
+    "hash": "324235235345",
+    "quantity": 0.5
 }
 
 ```
