@@ -21,17 +21,22 @@ app.get('/api/workers', async (req, res) => {
     res.json(workers);
 });
 
+app.get('/api/pot', async (req, res) => {
+    const pot = await walletModel.find();
+    
+    console.log(pot);
 
-app.get('/api/tip', async (req, res) => {
-	const pot = await walletModel.find();
+    console.log(pot[0].quantity)
 
-	res.json(pot.quantity);
+	res.json(pot[0].quantity);
 });
 
-app.post('/api/tip', async (req, res) => {
-	const tip = await walletModel.add(req.body);
+app.post('/api/pot/:id', async (req, res) => {
+    const pot = await walletModel.findOne({ _id: req.params.id });
+    pot.quantity += req.body.quantity;
+    pot.save();
 
-	res.json(tip);
+	res.json(pot);
 });
 
 app.listen(port, () => {
