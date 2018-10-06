@@ -31,7 +31,7 @@ async function starterSeed() {
     }
     await Wallet.create(wallet1);
 }
-
+ 
 mongoose.connection.on('open', async () => {
     console.log('Dropping database...');
     await mongoose.connection.db.dropDatabase();
