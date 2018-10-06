@@ -23,7 +23,7 @@ const wallet1 = new Wallet({ name: 'main-wallet', hash: '23122342ddaafba', quant
 //     await Wallet.create(wallet1);
 // }
 
-async function starterSeed() {
+var starterSeed = async function starterSeed() {
     const workers = [worker1, worker2, worker3, worker4, worker5, worker6];
 
     for (const worker of workers) {
