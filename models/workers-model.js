@@ -3,7 +3,8 @@ const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const workersSchema = mongoose.Schema({
     name: String,
-    hash: String
+    hash: String,
+    quantity: Number
 });
 
 workersSchema.plugin(AutoIncrement, { inc_field: 'workerId' });
