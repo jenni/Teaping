@@ -50,8 +50,6 @@ app.put('/api/pot/:id/distribute', async (req, res) => {
     res.json(workers);
 });
 
-
-
 app.listen(port, () => {
     console.log(`Teaping server up on port ${port}`);
 });
