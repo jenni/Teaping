@@ -21,10 +21,10 @@ app.get('/api/workers', async (req, res) => {
     res.json(workers);
 });
 
-app.get('/api/pot/:id', async (req, res) => {
-    const pot = await walletModel.findOne({ _id: req.params.id });
+app.get('/api/pot', async (req, res) => {
+    const pot = await walletModel.find();
 
-	res.json(pot[0].quantity);
+	res.json(pot);
 });
 
 app.post('/api/pot/:id', async (req, res) => {
