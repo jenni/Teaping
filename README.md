@@ -1,4 +1,4 @@
-# Teaping API. 
+# Teaping API. :leaves:
 :construction:
 
 Available under -> http://teaping.herokuapp.com
