@@ -38,13 +38,13 @@ GET /api/workers
 ### Give tip
 
 ``` http
-POST /api/pot
+PUT /api/pot
 ```
 
 Example:
 
 ``` http
-POST api/pot/5bb8ab88af4ba8e6dd6e2a14
+PUT api/pot/5bb8ab88af4ba8e6dd6e2a14
 
 {
     "hash": "324235235345",
@@ -75,3 +75,35 @@ GET api/pot
 ]
 ```
 
+### Distribute payment
+
+``` http
+PUT /api/pot/:wallet/distribute
+```
+
+Example:
+
+``` http
+PUT api/pot/5bb8ab88af4ba8e6dd6e2a14
+
+Will distribute the quantity of the pot between the workers.
+
+[
+    {
+        "_id": "5bb8ab88af4ba8e6dd6e2a12",
+        "name": "Emsoft",
+        "hash": "3253544534646546",
+        "workerId": 5,
+        "__v": 0,
+        "quantity": 4.333333333333333
+    },
+    {
+        "_id": "5bb8ab88af4ba8e6dd6e2a13",
+        "name": "Melanie",
+        "hash": "3253544534646546",
+        "workerId": 6,
+        "__v": 0,
+        "quantity": 4.333333333333333
+    }
+]
+```
