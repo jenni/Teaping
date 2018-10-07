@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 const Worker = require('../models/workers-model');
 const Wallet = require('../models/wallet-model');
 
-const worker1 = new Worker({ name: 'Jen', hash: '2312234234234234', 0 });
-const worker2 = new Worker({ name: 'Masa', hash: '56756767867789', 0 });
-const worker3 = new Worker({ name: 'Annes', hash: '8797889089098', 0 });
-const worker4 = new Worker({ name: 'Gosia', hash: '345345435435435', 0 });
-const worker5 = new Worker({ name: 'Emsoft', hash: '32,53544534646546', 0 });
-const worker6 = new Worker({ name: 'Melanie', hash: '3253544534646546', 0 });
+const worker1 = new Worker({ name: 'Jen', hash: '2312234234234234', quantity: 0 });
+const worker2 = new Worker({ name: 'Masa', hash: '56756767867789', quantity: 0 });
+const worker3 = new Worker({ name: 'Annes', hash: '8797889089098', quantity: 0 });
+const worker4 = new Worker({ name: 'Gosia', hash: '345345435435435', quantity: 0 });
+const worker5 = new Worker({ name: 'Emsoft', hash: '32,53544534646546', quantity: 0 });
+const worker6 = new Worker({ name: 'Melanie', hash: '3253544534646546', quantity: 0 });
 
 const wallet1 = new Wallet({ name: 'main-wallet', hash: '23122342ddaafba', quantity: 0 });
 

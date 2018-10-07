@@ -43,12 +43,12 @@ app.put('/api/pot/:id/distribute', async (req, res) => {
     const payment = totalPot / countWorkers;
     const totalPayment = payment * countWorkers;
 
-    if (totalPayment >= totalPot) {
+    if (totalPayment >= totalPot && totalPot > 0) {
         await executePayment(workers, payment);
         wallet.quantity -= totalPayment;
         await wallet.save();
     } else {
-        new Error(`There's no sufficient pot`)
+        new Error(`There's no sufficient pot`);
     }
 
     res.json(workers);
@@ -56,7 +56,7 @@ app.put('/api/pot/:id/distribute', async (req, res) => {
 
 const executePayment = async (workers, payment, wallet) => {
     for (const worker of workers) {
-        worker.quantity = payment;
+        worker.quantity += payment;
         await worker.save();
     }
 }
