@@ -37,18 +37,29 @@ app.put('/api/pot/:id', async (req, res) => {
 
 app.put('/api/pot/:id/distribute', async (req, res) => {
     const wallet = await walletModel.findOne({ _id: req.params.id });
-    const total = wallet.quantity;
     const workers = await workersModel.find();
-    const count = workers.length;
-    const payment = total / count;
+    const totalPot = wallet.quantity;
+    const countWorkers = workers.length;
+    const payment = totalPot / countWorkers;
+    const totalPayment = payment * countWorkers;
 
-    for (const worker of workers) {
-        worker.quantity = payment;
-        await worker.save();
+    if (totalPayment >= totalPot) {
+        await executePayment(workers, payment);
+        wallet.quantity -= totalPayment;
+        await wallet.save();
+    } else {
+        new Error(`There's no sufficient pot`)
     }
 
     res.json(workers);
 });
+
+const executePayment = async (workers, payment, wallet) => {
+    for (const worker of workers) {
+        worker.quantity = payment;
+        await worker.save();
+    }
+}
 
 app.listen(port, () => {
     console.log(`Teaping server up on port ${port}`);
